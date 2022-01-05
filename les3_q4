@@ -1,0 +1,24 @@
+#4.Определить, какое число в массиве встречается чаще всего.
+
+import random
+
+glob = [random.randint(-1, 10) for _ in range (10)]
+glob.sort()
+print(f'Массив: {glob}')
+
+max_frq = {}
+
+for i in glob:
+
+    chk = max_frq.get(i)
+    if chk == None:
+        max_frq[i] = 1
+    else:
+        max_frq[i] = chk + 1
+freq = (max_frq.values())
+mf = max(freq)
+res = []
+for (k, v) in max_frq.items():
+     if v == mf:
+         res += [k]
+print(f'число {res} встречается чаще всего')

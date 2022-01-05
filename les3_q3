@@ -1,0 +1,24 @@
+#3. В массиве случайных целых чисел поменять местами минимальный и максимальный элементы.
+
+import random
+
+glob = [random.randint(-1, 10) for _ in range (10)]
+glob.sort()
+print(glob)
+
+min_glob =glob[0]
+max_glob = glob[0]
+for i in glob:
+    if i < min_glob:
+        min_glob = i
+    elif i> max_glob:
+        max_glob = i
+
+oh_my_glob_max = glob.index(min_glob)
+oh_my_glob_min = glob.index(max_glob)
+
+glob[oh_my_glob_min], glob[oh_my_glob_max] = glob[oh_my_glob_max], glob[oh_my_glob_min]
+
+
+print(f'Массив осле изменения элементов {oh_my_glob_min} и {oh_my_glob_max}: {glob}')
+

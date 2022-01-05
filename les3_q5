@@ -1,0 +1,23 @@
+#5.найти максимальный отрицательный элемент
+
+
+import random
+
+glob = [random.randint(-7, 10) for _ in range (10)]
+glob.sort()
+print(glob)
+
+min_glob = []
+for i in glob:
+
+    if i >= 0:
+        continue
+
+
+    elif i <0:
+        min_glob.append(i)
+        print("Item found!")
+
+sorted_list = sorted(min_glob)
+result = sorted_list[-1]
+print(f'наибольшее отрицательное число в массиве: {result}')
