@@ -1,0 +1,29 @@
+from collections import namedtuple
+from collections import defaultdict
+
+new_buro = namedtuple('new_buro', 'name, profit')
+all_buros = []
+total_profit = 0
+num = int(input('введите количество бюро: '))
+
+
+for i in range(1, num + 1):
+    name = input(f'введите название бюро(i): ')
+    profit = int(input('введите прибыль за четыре квартала:'))
+    buro = new_buro(name=name, profit=profit)
+
+    all_buros.append(buro)
+    total_profit += profit
+
+
+mean_profit = total_profit // num
+print(f'средняя прибыль: {mean_profit}')
+
+
+c = defaultdict(list)
+for k, v in all_buros:
+    c[k].append(v)
+    if v > mean_profit:
+        print("прибыль", k, "выше среднего:", v)
+    else:
+        print("прибыль", k, "ниже среднего:", v)
